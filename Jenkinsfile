@@ -1,7 +1,7 @@
 pipeline {
 	agent any
             stages {
-		STAGE 1 
+		   stage('First')
                 
 			steps {
 				script {
@@ -13,29 +13,28 @@ pipeline {
 				}
 			}
 
-                STAGE 2 
-                      when { 
-                           EXECUTE="True"
-                       }
+                   stage('Second')
+ 
+                            when { 
+                                    EXECUTE="True"
+                                 }
+
+			       steps {
+				
+					      echo $EXECUTE
+                                     }
+
+                    stage('Third')
+			     when { 
+                                    EXECUTE="False"
+                                  } 
 
 			steps {
 				
-						echo $EXECUTE
+					    echo “nothing to do”
 					
 			
-			}
-
-                STAGE 3 
-			when { 
-                           EXECUTE="False"
-                       }
-
-			steps {
-				
-						echo “nothing to do”
-					
-			
-			}
+			     }
                        }
 
 }

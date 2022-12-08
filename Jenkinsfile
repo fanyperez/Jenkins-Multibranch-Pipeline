@@ -7,8 +7,9 @@ pipeline {
 			       steps {
 				    script {
                                            
-                                           env.EXECUTE="True" 
-                                            echo “Updating Second Stage”
+                                           env.EXECUTE="True"
+                                           } 
+                                            
 					
 				}
 			}
@@ -22,6 +23,7 @@ pipeline {
 
 			       steps {
 				
+                                              echo "Updating Second Stage"
 					      echo $EXECUTE
                                      }
 

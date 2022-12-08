@@ -1,10 +1,10 @@
 pipeline {
 	agent any
-            stages {
-		   stage('First')
+                stages {
+		       stage('First') {
                 
-			steps {
-				script {
+			       steps {
+				    script {
                                              environment {
 						EXECUTE="True"
                                              }
@@ -12,8 +12,9 @@ pipeline {
 					
 				}
 			}
+                        }
 
-                   stage('Second')
+                   stage('Second') {
  
                             when { 
                                     EXECUTE="True"
@@ -24,7 +25,8 @@ pipeline {
 					      echo $EXECUTE
                                      }
 
-                    stage('Third')
+                        }
+                    stage('Third') {
 			     when { 
                                     EXECUTE="False"
                                   } 
@@ -37,5 +39,6 @@ pipeline {
 			     }
                        }
 
+        }
 }
 

@@ -1,6 +1,8 @@
 pipeline {
 	agent any
+            stages {
 		STAGE 1 
+                
 			steps {
 				script {
                                              environment {
@@ -11,7 +13,7 @@ pipeline {
 				}
 			}
 
-               STAGE 2 
+                STAGE 2 
                       when { 
                            EXECUTE="True"
                        }
@@ -34,7 +36,7 @@ pipeline {
 					
 			
 			}
-
+                       }
 
 }
 

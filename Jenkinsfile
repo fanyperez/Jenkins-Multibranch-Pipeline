@@ -1,8 +1,5 @@
 pipeline {
 	agent any
-              environment {
-                         EXECUTE="TRUE"
-                         }
               
                     stages {
 		       stage('First') {
@@ -10,6 +7,7 @@ pipeline {
 			       steps {
 				    script {
                                            
+                                           env.EXECUTE="True" 
                                             echo “Updating Second Stage”
 					
 				}

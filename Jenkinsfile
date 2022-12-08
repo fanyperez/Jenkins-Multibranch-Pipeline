@@ -1,5 +1,3 @@
-
-
 pipeline {
         agent any
                 stages {
@@ -24,10 +22,10 @@ pipeline {
 
                                steps {
 
-                                              echo “Updating Second Stage”
+                                              sh'echo “Updating Second Stage”'
                                        script { 
-                                               echo ${EXECUTE}
-                                              }
+                                               sh'echo ${EXECUTE}'
+                                              } 
                                      }
                                      
 
@@ -39,7 +37,7 @@ pipeline {
 
                         steps {
 
-                                            echo "nothing to do"
+                                            sh'echo "nothing to do"'
 
 
                              }

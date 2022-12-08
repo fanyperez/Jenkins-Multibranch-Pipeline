@@ -4,11 +4,10 @@ pipeline {
                        stage('First') {
 
                                steps {
+                                      echo "step one"
                                     script {
-                                             environment {
-                                                EXECUTE="True"
-                                             }
-                                             echo “Updating Second Stage”
+                                            
+                                                env.EXECUTE="True"
 
                                 }
                         }
@@ -20,9 +19,13 @@ pipeline {
                                     environment name: 'EXECUTE', value: 'True'
                                  }
 
-                               steps {
+                                steps { 
+                                         echo "Updating Second Stage" 
+                                      }
 
-                                              echo $EXECUTE
+                                     script {
+
+                                              echo ${EXECUTE}
                                      }
 
                         }
